@@ -1,0 +1,5 @@
+.mapWrapper {
+    width: 100vw;
+    height: 70vh;
+    z-index: 1;
+}

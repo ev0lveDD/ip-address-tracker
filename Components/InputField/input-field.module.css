@@ -1,0 +1,20 @@
+.ipInputWrapper {
+    display: flex;
+    
+}
+
+.ipInput {
+    background-color: white;
+    min-width: 40vw;
+    padding: 1rem 2rem;
+    border-radius: 16px 0 0 16px;
+    border: none;
+    color: black;
+}
+
+.ipInputButton {
+    padding: 1rem 2rem;
+    border-radius: 0 16px 16px 0;
+    border: none;
+    cursor: pointer;
+}
