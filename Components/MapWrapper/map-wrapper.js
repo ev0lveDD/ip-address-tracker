@@ -1,12 +1,9 @@
-import 'leaflet/dist/leaflet.css'
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
-import "leaflet-defaulticon-compatibility";
 import dynamic from 'next/dynamic';
 import {Suspense, useMemo } from "react";
 
 export default function MapWrapper({dataFetched, userIP}) {
 
-  const Map = useMemo(() => dynamic(() => import('./map-field'),
+  const Map = useMemo(() => dynamic(() => import('./MapField/map-field'),
     {ssr: false}), [dataFetched]);
 
       return(
