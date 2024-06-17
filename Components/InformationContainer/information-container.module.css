@@ -59,6 +59,8 @@
     font-weight: 700;
     font-size: 18px;
     margin: 0;
+    width: 95%;
+    text-align: center;
 }
 
 .dataSection:nth-child(4) {
@@ -91,6 +93,12 @@
         height: 3rem;
         gap: 0.5rem;
         padding: 0 2rem;
+        min-width: 18%;
+    }
+
+    .dataDisplaySection h1{
+        width: auto;
+        text-align: auto;
     }
 
   }
