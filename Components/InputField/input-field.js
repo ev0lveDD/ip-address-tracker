@@ -20,11 +20,20 @@ export default function InputField({userIP, setUserIP}) {
         console.log("IP UPDATED!!!!!!!!!!!!!!!")
       }
 
+    function _handleKeyDown(event) {
+        if(event.key === "Enter") {
+            handleSubmit();
+        }
+        else {
+            null;
+        }
+    }
+
     return(
         <div className={classes.ipInputWrapper}>
-            <input value={value} onChange={handleChange} placeholder="Search for any IP address or domain" className={classes.ipInput}></input>
+            <input value={value} onChange={handleChange} onKeyDown={_handleKeyDown} placeholder="Search for any IP address or domain" className={classes.ipInput}></input>
             <button className={classes.ipInputButton} type="submit" onClick={handleSubmit}>
-            <Image src={arrowIcon} width={25} height={25} alt="arrow icon"/>
+            <Image src={arrowIcon} width={8} height={10} alt="arrow icon"/>
             </button>
         </div>
 

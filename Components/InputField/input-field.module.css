@@ -6,15 +6,30 @@
 .ipInput {
     background-color: white;
     min-width: 40vw;
-    padding: 1rem 2rem;
-    border-radius: 16px 0 0 16px;
+    padding: 0.8rem 2rem;
+    border-radius: 12px 0 0 12px;
     border: none;
     color: black;
+    font-size: 14px;
+}
+
+.ipInput:hover {
+    cursor: pointer;
+}
+
+.ipInput:focus {
+    outline: none;
 }
 
 .ipInputButton {
-    padding: 1rem 2rem;
-    border-radius: 0 16px 16px 0;
+    padding: 1rem 1rem;
+    border-radius: 0 12px 12px 0;
     border: none;
     cursor: pointer;
+    background-color: #111;
+    transition: 0.5s ease-in;
+}
+
+.ipInputButton:hover {
+    background-color: #454545;
 }
