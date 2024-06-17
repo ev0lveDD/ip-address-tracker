@@ -8,7 +8,7 @@ import L from 'leaflet';
 import classes from "./map-field.module.css";
 import markerIcon from "@/public/icon-location.svg";
 
-export default function MapContainers({position}) {
+export default function MapContainers({position, mapPosition}) {
 
   const customMarker = new L.icon({
     iconUrl : markerIcon.src,
@@ -17,7 +17,7 @@ export default function MapContainers({position}) {
 
     return(
         <MapContainer 
-        center={position} 
+        center={mapPosition} 
         zoom={15} 
         dragging={false}
         doubleClickZoom={false}
