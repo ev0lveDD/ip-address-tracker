@@ -1,0 +1,16 @@
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.mapWrapperSkeleton {
+    min-width: 100vw;
+    min-height: 70vh;
+    z-index: 1;
+    animation: skeleton-loading 1s linear infinite alternate;
+}

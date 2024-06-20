@@ -8,20 +8,20 @@ export default function InformationContainerSkeleton() {
           <InputFieldSkeleton />
           <div className={classes.dataDisplaySectionSkeleton}>
                     <div className={classes.dataSectionSkeleton}>
-                      <p className={classes.dataLabel}></p>
-                      <h1 className={classes.dataValue}></h1>
+                      <p className={classes.labelSkeleton}></p>
+                      <h1 className={classes.valueSkeleton}></h1>
                     </div>
                     <div className={classes.dataSectionSkeleton}>
-                      <p className={classes.dataLabel}></p>
-                      <h1 className={classes.dataValue}></h1>
+                      <p className={classes.labelSkeleton}></p>
+                      <h1 className={classes.valueSkeleton}></h1>
                     </div>
                     <div className={classes.dataSectionSkeleton}>
-                      <p className={classes.dataLabel}></p>
-                      <h1 className={classes.dataValue}></h1>
+                      <p className={classes.labelSkeleton}></p>
+                      <h1 className={classes.valueSkeleton}></h1>
                     </div>
                     <div className={classes.dataSectionSkeleton}>
-                      <p className={classes.dataLabel}></p>
-                      <h1 className={classes.dataValue}></h1>
+                      <p className={classes.labelSkeleton}></p>
+                      <h1 className={classes.valueSkeleton}></h1>
                     </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function MapContainers({position, mapPosition}) {
         <MapContainer 
         center={mapPosition} 
         zoom={15} 
-        dragging={false}
+        dragging={true}
         doubleClickZoom={false}
         scrollWheelZoom={false}
         attributionControl={false}

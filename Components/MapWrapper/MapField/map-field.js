@@ -1,6 +1,7 @@
 'use client';
 import MapContainers from "./map-containers";
 import { useState, useEffect, Suspense } from "react";
+import MapWrapperSkeleton from "../Skeleton/map-wrapper-skeleton";
 
 export default function MapField({dataFetched, userIP}) {
 
@@ -12,7 +13,7 @@ export default function MapField({dataFetched, userIP}) {
   },[dataFetched.location.lat, dataFetched.location.lng])
 
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={<MapWrapperSkeleton />}>
       <MapContainers position={position} mapPosition={mapPosition}/>
     </Suspense>
   );
