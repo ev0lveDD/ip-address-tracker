@@ -1,20 +1,24 @@
 'use client';
 import MapContainers from "./map-containers";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useMemo } from "react";
 import MapWrapperSkeleton from "../Skeleton/map-wrapper-skeleton";
 
 export default function MapField({dataFetched, userIP}) {
 
-  const [position, setPosition] = useState([dataFetched.location.lat, dataFetched.location.lng]);
-  const [mapPosition, setMapPosition] = useState([dataFetched.location.lat+0.002, dataFetched.location.lng]);
-  useEffect(() => {
-    setPosition([dataFetched.location.lat, dataFetched.location.lng])
-    setMapPosition([dataFetched.location.lat+0.002, dataFetched.location.lng])
-  },[dataFetched.location.lat, dataFetched.location.lng])
+  const startingPosition = [dataFetched.location.lat, dataFetched.location.lng];
+
+  const [position, setPosition] = useState(startingPosition);
+  
+  const [mapPosition, setMapPosition] = useState(startingPosition);
+
+  const [oldPosition, setOldPosition] = useState(startingPosition);
+ 
 
   return (
+
     <Suspense fallback={<MapWrapperSkeleton />}>
-      <MapContainers position={position} mapPosition={mapPosition}/>
+      {console.log("to jest start:" + startingPosition)}
+      <MapContainers dataFetched={dataFetched} position={position} setPosition={setPosition} mapPosition={mapPosition} setMapPosition={setMapPosition} oldPosition={oldPosition} setOldPosition={setOldPosition}/>
     </Suspense>
   );
 }

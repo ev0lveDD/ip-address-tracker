@@ -8,7 +8,7 @@ import MapWrapper from "../MapWrapper/map-wrapper";
 
 export default  function Main() {
 
-    const apiKey="at_QV13f739zGQMl4ZS0akBwVmPUYZRY";
+    const apiKey="at_P5mQ962LeVq0cxurc55Wgd2QS5Erm";
 
     const [dataFetched, setDataFetched] = useState(null);
     const [isLoading, setLoading] = useState(true);
@@ -16,21 +16,21 @@ export default  function Main() {
    
     useEffect(() => {
         if(userIP.match(/[a-z]/i) && !userIP.includes("@")) {
-            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_QV13f739zGQMl4ZS0akBwVmPUYZRY&domain=${userIP}`)
+            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_P5mQ962LeVq0cxurc55Wgd2QS5Erm&domain=${userIP}`)
             .then((res) => res.json())
             .then((dataFetched) => {
               setDataFetched(dataFetched)
               setLoading(false)
             })
         } else if(userIP.includes("@")) {
-            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_QV13f739zGQMl4ZS0akBwVmPUYZRY&email=${userIP}`)
+            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_P5mQ962LeVq0cxurc55Wgd2QS5Erm&email=${userIP}`)
             .then((res) => res.json())
             .then((dataFetched) => {
                 setDataFetched(dataFetched)
                 setLoading(false)
             })
         } else {
-            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_QV13f739zGQMl4ZS0akBwVmPUYZRY&ipAddress=${userIP}`)
+            fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_P5mQ962LeVq0cxurc55Wgd2QS5Erm&ipAddress=${userIP}`)
             .then((res) => res.json())
             .then((dataFetched) => {
               setDataFetched(dataFetched)
