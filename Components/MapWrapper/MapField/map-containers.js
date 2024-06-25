@@ -4,6 +4,7 @@ import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import L from 'leaflet';
 import { useMapEvents } from "react-leaflet";
+import { useEffect } from "react";
 
 
 import classes from "./map-field.module.css";
@@ -15,13 +16,13 @@ import markerIcon from "@/public/icon-location.svg";
 export default function MapContainers({dataFetched, position, setPosition, mapPosition, setMapPosition, oldPosition, setOldPosition}) {
 
   function MyComponent() {
+
     const map = useMapEvents({
       click() {
         map.flyTo([dataFetched.location.lat+0.002, dataFetched.location.lng], map.getZoom());
         setTimeout(()=>{
           setPosition((previous) => {
             setOldPosition(previous);
-            console.log("poprzednia wartość: "+previous);
             return [dataFetched.location.lat, dataFetched.location.lng];
                     });
           setMapPosition([dataFetched.location.lat+0.002, dataFetched.location.lng]);
@@ -29,8 +30,7 @@ export default function MapContainers({dataFetched, position, setPosition, mapPo
         }, 3000)
       }
     }, 
-    console.log("obecna wartość: "+ position))
-
+    console.log("obecna wartość: "+ position+" "+"Poprzednia wartość: "+oldPosition))
 
     return position === null ? null : (
       <Marker 
@@ -51,10 +51,10 @@ export default function MapContainers({dataFetched, position, setPosition, mapPo
         center={oldPosition} 
         zoom={15} 
         dragging={true}
-        doubleClickZoom={false}
+        doubleClickZoom={true}
         scrollWheelZoom={false}
         attributionControl={false}
-        zoomControl={false}
+        zoomControl={true}
         className={classes.mapWrapper}>
         <MyComponent />
         <TileLayer

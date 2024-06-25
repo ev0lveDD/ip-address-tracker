@@ -5,13 +5,13 @@ import MapWrapperSkeleton from "../Skeleton/map-wrapper-skeleton";
 
 export default function MapField({dataFetched, userIP}) {
 
-  const startingPosition = [dataFetched.location.lat, dataFetched.location.lng];
+  const startingPosition = [54.372158, 18.638306];
 
-  const [position, setPosition] = useState(startingPosition);
+  const [position, setPosition] = useState([54.372158, 18.638306]);
   
   const [mapPosition, setMapPosition] = useState(startingPosition);
 
-  const [oldPosition, setOldPosition] = useState(startingPosition);
+  const [oldPosition, setOldPosition] = useState([54.372158, 18.638306]);
  
 
   return (
