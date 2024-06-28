@@ -8,25 +8,22 @@ import { useMapEvents } from "react-leaflet";
 
 import classes from "./map-field.module.css";
 import markerIcon from "@/public/icon-location.svg";
+import { useEffect } from "react";
 
 
 
 
 export default function MapContainers({dataFetched, position, setPosition, mapPosition, setMapPosition, oldPosition, setOldPosition}) {
 
+  useEffect(() => {
+    oldPosition.current = position;
+  }, [position])
+
   function MyComponent() {
     const map = useMapEvents({
       click() {
         map.flyTo([dataFetched.location.lat+0.002, dataFetched.location.lng], map.getZoom());
-        setTimeout(()=>{
-          setPosition((previous) => {
-            setOldPosition(previous);
-            console.log("poprzednia wartość: "+previous);
-            return [dataFetched.location.lat, dataFetched.location.lng];
-                    });
-          setMapPosition([dataFetched.location.lat+0.002, dataFetched.location.lng]);
-          console.log("useEffect odpalony");
-        }, 3000)
+        setPosition([dataFetched.location.lat+0.002, dataFetched.location.lng]);
       }
     }, 
     console.log("obecna wartość: "+ position))
@@ -48,7 +45,7 @@ export default function MapContainers({dataFetched, position, setPosition, mapPo
 
     return(
         <MapContainer 
-        center={oldPosition} 
+        center={oldPosition.current} 
         zoom={15} 
         dragging={true}
         doubleClickZoom={false}
@@ -62,7 +59,7 @@ export default function MapContainers({dataFetched, position, setPosition, mapPo
               url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
         />
         <Marker 
-        position={oldPosition} 
+        position={oldPosition.current} 
         className={classes.marker} 
         icon={customMarker}>
         </Marker>
