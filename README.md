@@ -14,6 +14,7 @@ Your users should be able to:
 * View the optimal layout for each page depending on their device's screen size
 
 The project was written in NEXT.JS, as part of a consolidation of the acquired knowledge as well as fetching and using the data from one API to another.
+
 Link: https://ip-address-tracker-ev0.netlify.app/
 	
 ## Technologies
