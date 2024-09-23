@@ -8,7 +8,7 @@
 ## General info
 This project consisted of creating IP Address Tracker with the help of two different API's. To get the IP Address locations, I will be using the IP Geolocation API by IPify. To generate the map, I will use LeafletJS.
 
-Your users should be able to:
+Users should be able to:
 * See their own IP Address on the map on the initial page load
 * Search for any IP addresses or domains and see the key information and location
 * View the optimal layout for each page depending on their device's screen size
